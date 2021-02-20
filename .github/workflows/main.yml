@@ -14,14 +14,14 @@ jobs:
       USER_EMAIL  : peliter@gmail.com
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Commit files
       run: |
         git init
         git config --local user.email $USER_NAME
         git config --local user.name $USER_EMAIL
         git status
-        git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
+        git remote add origin https://$MY_SECRET@github.com/peliter/gh-pages.git
         git checkout -b gh-pages
         git add --all
         git commit -m "deploy to Github pages"
